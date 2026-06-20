@@ -1,4 +1,4 @@
-# Vision: UTM Height Training
+# Vision: Vert Finder
 
 ## What It Is
 

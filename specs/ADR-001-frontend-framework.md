@@ -6,7 +6,7 @@
 
 ## Context
 
-UTM Height Training is a web app that needs:
+Vert Finder is a web app that needs:
 - An interactive map with pan, zoom, and layer controls
 - Filter controls (elevation gain range slider, location search)
 - Route detail panels with dynamic content

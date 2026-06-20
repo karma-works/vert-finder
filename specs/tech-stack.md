@@ -1,4 +1,4 @@
-# Tech Stack: UTM Height Training
+# Tech Stack: Vert Finder
 
 ## Summary
 

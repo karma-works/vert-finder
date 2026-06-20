@@ -1,4 +1,4 @@
-# UTM Height Training: Specification Index
+# Vert Finder: Specification Index
 
 **Project:** Route discovery tool for ultra marathon runners seeking training routes by elevation gain
 
@@ -145,8 +145,8 @@ If any gate fails, revisit product assumptions or pivot to a different problem.
 
 ```bash
 # Clone repo
-git clone https://github.com/you/utm-height-training.git
-cd utm-height-training
+git clone https://github.com/karma-works/vert-finder.git
+cd vert-finder
 
 # Install frontend deps
 npm install
@@ -166,7 +166,7 @@ python scripts/process_elevation.py
 ### File Structure (Post-MVP)
 
 ```
-utm-height-training/
+vert-finder/
 ├── src/
 │   ├── components/
 │   │   ├── Map.tsx

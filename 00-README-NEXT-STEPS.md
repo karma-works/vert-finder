@@ -1,4 +1,4 @@
-# 🗺️ UTM Height Training: Next Steps Summary
+# 🗺️ Vert Finder: Next Steps Summary
 
 > **Archived.** These next steps describe the superseded precomputed-region pipeline. See [`README.md`](README.md) and [`specs/ADR-006-worldwide-live-data.md`](specs/ADR-006-worldwide-live-data.md) for the implemented worldwide architecture.
 
@@ -182,7 +182,7 @@ No accounts, no social features, no route planning
 ## What to Do If You Get Stuck
 
 ### Download Stalls or Fails
-- Check: `tail -30 /tmp/claude-1000/-home-ubuntu-Projects-utm-height-training/*/tasks/bjo8nskar.output`
+- Check: `tail -30 /tmp/claude-1000/-home-ubuntu-Projects-vert-finder/*/tasks/bjo8nskar.output`
 - If AWS S3 is down: fallback to SRTM or NASADEM
 - If AWS CLI broken: reinstall with `sudo apt-get install awscli`
 

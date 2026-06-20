@@ -1,4 +1,4 @@
-# Implementation Plan: UTM Height Training
+# Implementation Plan: Vert Finder
 
 > **Historical plan.** The project has moved past the initial scaffold and adopted the worldwide live-data architecture in [ADR-006](ADR-006-worldwide-live-data.md). Use the repository README and ADR-006 for current implementation guidance.
 

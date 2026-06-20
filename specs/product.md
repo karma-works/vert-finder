@@ -1,4 +1,4 @@
-# Product Specification: UTM Height Training
+# Product Specification: Vert Finder
 
 ## Current MVP Direction
 

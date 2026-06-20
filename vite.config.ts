@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: process.env.GITHUB_ACTIONS ? '/utm-height-training/' : '/',
+  base: process.env.GITHUB_ACTIONS ? '/vert-finder/' : '/',
   server: {
     allowedHosts: ['flywheel1', '100.86.249.92'],
   },

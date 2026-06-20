@@ -1,8 +1,18 @@
+<p align="center">
+  <img src="public/logo.svg" width="320" alt="Vert Finder logo" />
+</p>
+
+<p align="center">
+  <a href="https://karma-works.github.io/vert-finder/"><strong>Open Vert Finder ↗</strong></a>
+</p>
+
 # Vert Finder
 
 Find and combine nearby trail segments by elevation gain. Search any city or coordinates, choose a radius and vertical range, then select segments on the map to see their combined distance and ascent.
 
 The application is a static React site. It fetches current OpenStreetMap paths on demand, builds useful network segments at intersections, calculates elevation in the browser from global Terrarium terrain tiles, and caches completed search areas in IndexedDB. It has no accounts, tracking, API keys, or application backend.
+
+![Vert Finder displaying trail segments around Zurich](screenshot.png)
 
 ## Validation regions
 

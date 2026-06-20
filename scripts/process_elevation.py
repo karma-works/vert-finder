@@ -38,7 +38,7 @@ def query_region(region: dict[str, Any], retries: int = 3) -> list[dict[str, Any
     query = f'''[out:json][timeout:120];
     way(around:{radius},{lat},{lon})[highway~"^(path|footway|bridleway)$"][access!="private"];
     out tags geom;'''
-    headers = {"User-Agent": "UTM-Height-Training/1.0 (elevation processing)"}
+    headers = {"User-Agent": "Vert-Finder/1.0 (elevation processing)"}
     for attempt in range(retries):
         try:
             response = requests.post(OVERPASS, data={"data": query}, headers=headers, timeout=150)

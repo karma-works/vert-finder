@@ -43,7 +43,7 @@ export default function App() {
 
   return <div className="app-shell">
     <header className="topbar">
-      <a className="brand" href={import.meta.env.BASE_URL} aria-label="Vert Finder home"><span className="brand__mark"><i /><i /><i /></span><span>VERT<br />FINDER</span></a>
+      <a className="brand" href={import.meta.env.BASE_URL} aria-label="Vert Finder home"><img className="brand__logo" src={`${import.meta.env.BASE_URL}logo.svg`} alt="Vert Finder" /></a>
       <LocationSearch regions={regions} onSelect={selectLocation} />
       <button className="settings-button" onClick={() => setSettings(!settings)} aria-expanded={settings} aria-controls="settings-panel"><span>Radius</span> {radius} km <i aria-hidden="true">⌄</i></button>
       {settings && <div className="settings" id="settings-panel"><label htmlFor="radius">Search radius <strong>{radius} km</strong></label><input id="radius" type="range" min="5" max="30" step="5" value={radius} onChange={(event) => updateRadius(Number(event.target.value))} /></div>}

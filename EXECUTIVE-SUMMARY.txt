@@ -1,5 +1,5 @@
 ╔════════════════════════════════════════════════════════════════════════════════╗
-║                    UTM HEIGHT TRAINING: RECOMMENDED APPROACH                   ║
+║                    VERT FINDER: RECOMMENDED APPROACH                   ║
 ║                                                                                ║
 ║                    Complete Specification → Validation Path                    ║
 ╚════════════════════════════════════════════════════════════════════════════════╝
