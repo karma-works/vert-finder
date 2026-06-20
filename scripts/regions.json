@@ -1,0 +1,8 @@
+[
+  {"id":"chamonix","name":"Chamonix","country":"France","center":[6.8694,45.9237],"radius_km":30},
+  {"id":"boulder","name":"Boulder","country":"USA","center":[-105.2705,40.015],"radius_km":30},
+  {"id":"moab","name":"Moab","country":"USA","center":[-109.5498,38.5733],"radius_km":30},
+  {"id":"sedona","name":"Sedona","country":"USA","center":[-111.761,34.8697],"radius_km":30},
+  {"id":"limone","name":"Limone Piemonte","country":"Italy","center":[7.5781,44.2013],"radius_km":30},
+  {"id":"zurich","name":"Zurich","country":"Switzerland","center":[8.5417,47.3769],"radius_km":30}
+]

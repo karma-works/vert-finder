@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+data/*.tif
+data/*.vrt
+data/copernicus/
+public/data/*.geojson
+public/data/metadata.json
+.pytest_cache/
+__pycache__/
+*.tsbuildinfo
+.gstack/

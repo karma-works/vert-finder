@@ -1,0 +1,161 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                    UTM HEIGHT TRAINING: RECOMMENDED APPROACH                   ║
+║                                                                                ║
+║                    Complete Specification → Validation Path                    ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+STATUS: Phase 0.5a (Elevation Data Validation) IN PROGRESS
+  • DEM download: 5 of 13 tiles complete (38%)
+  • Estimated completion: 1–2 hours
+  • All documentation & scripts ready
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WHAT YOU APPROVED:
+  ✅ The problem is real (ultra runners waste 20–45 min finding training routes)
+  ✅ The tech stack is smart (zero hosting cost, fast iteration)
+  ✅ The MVP scope is tight (location + gain filter + map + route detail)
+  ✅ The implementation plan is realistic (12 weeks for Phase 0)
+
+WHAT WE DID:
+  ✅ Documented complete spec (thesis, vision, product, challenges)
+  ✅ Designed tech stack (React, Leaflet, OSM, Copernicus GLO-30, GitHub Pages)
+  ✅ Created 5 Architecture Decision Records (ADRs)
+  ✅ Wrote 12-week implementation plan (week-by-week breakdown)
+  ✅ Identified critical risks (OSM coverage, elevation accuracy, competition)
+  ✅ Designed validation strategy to test assumptions BEFORE building
+
+RECOMMENDATION: PHASED VALIDATION
+  Rather than improve the elevation pipeline first (5+ days),
+  validate the CURRENT pipeline's accuracy (1 day).
+
+  WHY?
+  • If accuracy ≥85%: Skip improvements, go straight to Phase 0 (saves 5 days)
+  • If accuracy <70%: Halt and improve (takes 5 days anyway)
+  • Risk: Minimal. Read-only operation, no code changes.
+  • Probability: 70% we proceed to Phase 0 tomorrow, 30% we need 5 days of improvements
+
+  DECISION TIMELINE:
+    • Today: Download completes, build VRT, run processor
+    • Today/Tomorrow: Spot-check 10 real routes (2–4 hours)
+    • Tomorrow: Make go/no-go decision
+    • Result: Clear path forward by 2026-06-21
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+NEXT IMMEDIATE STEPS (Once DEM Download Finishes):
+
+  1. BUILD VRT & PROCESS REAL DATA (20 min)
+     bash scripts/build_vrt_and_process.sh
+
+  2. INSPECT OUTPUT (5 min)
+     cat public/data/metadata.json | jq '.'
+
+  3. SPOT-CHECK 10 ROUTES (2–4 hours)
+     Compare app's elevation gain to ground truth (Gaia GPS, Komoot, AllTrails)
+     Document in ELEVATION-VALIDATION-RESULTS.md
+
+  4. MAKE DECISION (30 min)
+     • ≥85% routes within ±10% error? → ✅ Proceed Phase 0 (start week 1)
+     • <70% routes within ±10% error? → ❌ Halt, improve Phase 0.5b (4–6 days)
+     • 70–85%? → ⚠️ Proceed but flag data as "beta accuracy"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TIMELINE TO LAUNCH:
+
+  BEST CASE (validation passes):
+    Phase 0.5a validation: 1 day (today/tomorrow)
+    Phase 0 development: 10–12 weeks (weeks 2–13)
+    Launch: Mid-September 2026 ✅
+
+  REALISTIC CASE (small improvements needed):
+    Phase 0.5a validation: 1 day
+    Phase 0.5b improvements: 3–5 days
+    Phase 0 development: 10–12 weeks
+    Launch: Late September 2026 ✅
+
+  WORST CASE (major improvements needed):
+    Phase 0.5a validation: 1 day
+    Phase 0.5b improvements: 4–6 days
+    Phase 0 development: 10–12 weeks
+    Launch: Early October 2026 ✅
+
+  Expected delay from validation? Only 1–6 days. Worth the certainty.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DOCUMENTATION PROVIDED:
+
+  Strategic:
+    • RECOMMENDED-APPROACH.md — Why phased validation is smart
+    • PHASE-0.5A-EXECUTION-PLAN.md — Detailed checklist
+    • 00-README-NEXT-STEPS.md — Quick reference guide
+
+  Specification (in /specs/):
+    • thesis.md — Why this product needs to exist
+    • vision.md — What success looks like
+    • product.md — Feature spec & user flows
+    • challenges.md — 12 major risks & mitigations
+    • tech-stack.md — All tech choices explained
+    • ADR-001 through ADR-005 — Major design decisions
+    • implementation-plan.md — Week-by-week Phase 0 plan
+    • ELEVATION-PIPELINE-STRATEGY.md — Validation rationale
+
+  Tools:
+    • scripts/download_dem.py — Download GLO-30 tiles (RUNNING NOW)
+    • scripts/build_vrt_and_process.sh — Build VRT + run processor
+    • scripts/process_elevation.py — Core elevation processor (already existed)
+    • specs/ELEVATION-VALIDATION-TEMPLATE.md — Spot-check template
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+KEY DECISIONS LOCKED IN:
+
+  ✅ Tech Stack: React 18 + TypeScript + Vite (frontend)
+                Leaflet.js + react-leaflet (maps)
+                OSM + Overpass API (trails)
+                Copernicus GLO-30 DEM (elevation)
+                GitHub Pages (hosting)
+                GitHub Actions (CI/CD)
+
+  ✅ MVP Scope: Location search, elevation filter, map display, route detail
+                NO accounts, NO social, NO route planning
+
+  ✅ Launch Regions: Chamonix, Boulder, Moab, Sedona, Limone Piemonte
+                    (All validated to have good OSM trail coverage)
+
+  ✅ Cost Model: $0–200/year (free hosting, free APIs, optional domain)
+
+  ✅ Success Metrics: User finds route in <90 seconds, accuracy ±10%,
+                      MVP launch with 5 regions, ≥4/5 users would use again
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ONE CRITICAL INSIGHT:
+
+  The biggest risk is not technical — it's market validation.
+
+  Phase 0.5a validation answers the #1 technical risk:
+  "Is elevation gain calculation accurate enough?"
+
+  But the #1 MARKET risk is still unvalidated:
+  "Will ultra runners actually use this instead of asking their running buddies?"
+
+  Recommendation for Phase 1:
+  Get 5–10 early users in Week 1, gather feedback continuously,
+  iterate based on real usage, not assumptions.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOU'RE READY TO START PHASE 0.
+
+  Just waiting on:
+  1. DEM download to finish (1–2 hours)
+  2. Elevation accuracy validation (2–4 hours of spot-checking)
+  3. Go/no-go decision (tomorrow)
+
+  Then: 10–12 weeks to launch a public, free, open-source tool
+        that solves a real problem for a passionate community.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
